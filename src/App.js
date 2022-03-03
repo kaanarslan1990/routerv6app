@@ -1,8 +1,9 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Users from "./components/Users";
+import User from "./components/User";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="users" element={<Users />} />
+        <Route path="user/:id" element={<User />} />
+        
       </Routes>
     </div>
   );
