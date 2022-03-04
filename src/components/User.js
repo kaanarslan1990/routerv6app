@@ -5,6 +5,8 @@ import { Link, useParams } from "react-router-dom";
 function User() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState({});
+  // const user = getUser(userId);
+
 
   const { id } = useParams();
 
@@ -20,10 +22,14 @@ function User() {
       {loading && <div>Loading...</div>}
       {!loading && <code>{JSON.stringify(user)}</code>}
       
+
+
+      
+      
       <br />
       <br />
       {(parseInt(id) <= 9) ? <Link to={`/user/${parseInt(id) +1}`}>Next User ({parseInt(id) +1})</Link> : <Link to={`/user/${parseInt(id)}`}>Next User ({parseInt(id)})</Link> }
-
+      {/* <Outlet />  */}
       {/* <Link to={`/user/${parseInt(id) +1}`}>Next User ({parseInt(id) +1})</Link> */}
     </div>
   );
